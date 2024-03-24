@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- EN-Revision: 2d77c9fe145f74663128006eb71662b0c44e8987 Maintainer: yannick Status: ready -->
+<!-- EN-Revision: a2ef8f387d2264f26131c0a270f534141a68e18c Maintainer: yannick Status: ready -->
 <!-- Reviewed: yes -->
 <refentry xml:id="mysqli.real-connect" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
@@ -42,8 +42,8 @@
   <itemizedlist>
    <listitem>
     <para>
-     <function>mysqli_real_connect</function> a besoin d'un objet créé
-     avec <function>mysqli_init</function>.
+     <function>mysqli_real_connect</function> nécessite un objet valide qui
+     doit être créé par la fonction <function>mysqli_init</function>.
     </para>
    </listitem>
    <listitem>
@@ -269,7 +269,7 @@ $mysqli->close();
 
 class foo_mysqli extends mysqli {
     public function __construct($host, $user, $pass, $db) {
-        parent::init();
+        parent::__construct();
 
         if (!parent::options(MYSQLI_INIT_COMMAND, 'SET AUTOCOMMIT = 0')) {
             die('Setting MYSQLI_INIT_COMMAND failed');

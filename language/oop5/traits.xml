@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- EN-Revision: f5992d46ec044539bfc9ca7ec81f186a141dc514 Maintainer: yannick Status: ready -->
+<!-- EN-Revision: 7341710fa635b4a969bc855a1e4619cdfa6b63f1 Maintainer: yannick Status: ready -->
 <!-- Reviewed: no Maintainer: itanea -->
 <sect1 xml:id="language.oop5.traits" xmlns="http://docbook.org/ns/docbook">
  <title>Traits</title>
@@ -17,7 +17,7 @@
   Un trait est semblable à une classe, mais il ne sert qu'à grouper des fonctionnalités d'une
   manière intéressante. Il n'est pas possible d'instancier un Trait en lui-même. C'est un
   ajout à l'héritage traditionnel, qui autorise la composition horizontale de comportements,
-  c'est à dire l'utilisation de méthodes de classe sans besoin d'héritage.
+  c'est-à-dire l'utilisation de méthodes de classe sans besoin d'héritage.
  </para>
  
  <example xml:id="language.oop5.traits.basicexample">
@@ -184,7 +184,7 @@ Hello World!
    l'opérateur <literal>as</literal> ne renomme pas la méthode et n'affecte pas
    d'autres méthodes non plus.
   </para>
-  <example xml:id="language.oop5.traits.examples.ex1">
+  <example xml:id="language.oop5.traits.conflict.ex1">
    <title>Résolution des conflits</title>
    <para>
     Dans cet exemple, la classe Talker utilise les traits A et B.
@@ -329,8 +329,9 @@ Hello World!
   </para>
   <caution>
     <simpara>
-     Une classe concrète satisfait ces conditions en définissant une méthode concrète
-     avec le même nom ; sa signature peut être différente.
+     À partir de PHP 8.0.0, la signature d'une méthode concrète doit suivre les
+     <link linkend="language.oop.lsp">règles de compatibilité des signatures</link>.
+     Auparavant, sa signature pouvait être différente.
     </simpara>
    </caution>
   <example xml:id="language.oop5.traits.abstract.ex1">
